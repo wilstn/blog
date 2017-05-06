@@ -6,6 +6,7 @@ class BlogsController < ApplicationController
   end
 
   def show
+    @comments = @blog.comments.all.order('created_at DESC')
   end
 
   def new

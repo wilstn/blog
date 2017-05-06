@@ -1,0 +1,24 @@
+<div class="container comments-section">
+    <div class="row">
+        <div class="col-sm-1">
+            <div class="thumbnail">
+                <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+            </div>
+        </div>
+
+        <div class="col-sm-7">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <strong><%= comment.user %></strong> <span class="text-muted"> commented <%= time_ago_in_words(comment.created_at) %> ago</span>
+                </div>
+                <div class="panel-body">
+                    <%= comment.remark %>
+                    <br>
+                    <hr>
+                    <%= link_to 'Edit', edit_blog_comment_path(blog, comment) %> /
+                    <%= link_to 'Delete', blog_comment_path(blog, comment), method: :delete %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
