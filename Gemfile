@@ -36,7 +36,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'bootstrap-sass', '~> 3.3.6'
-gem 'client_side_validations'
 gem 'kaminari'
 gem 'redcarpet'
 gem 'nokogiri'

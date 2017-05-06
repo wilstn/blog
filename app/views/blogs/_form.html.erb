@@ -1,7 +1,7 @@
 <div class="container">
   <div class="form-area">
 
-    <%= form_for @blog, :validate => true do |f| %>
+    <%= form_for @blog do |f| %>
       <div class="form-group">
         <%= f.label :title %><br>
         <%= f.text_field :title %>
@@ -20,6 +20,6 @@
       </div>
         <%= f.submit 'Submit',class: "btn btn-default" %>
     <% end %>
-    
+
   </div>
 </div>
