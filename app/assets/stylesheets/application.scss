@@ -1,8 +1,7 @@
+@import "font-awesome";
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "blog-header";
-@import "blog-content-body";
-@import "blog-form";
+@import "blogs";
 
 
 // ===========================================
@@ -18,16 +17,3 @@
   font-size: 12px;
 }
 // ============================================
-
-.comment-form{
-  width: 600px;
-  margin: auto;
-  border-width: 2px;
-}
-
-footer{
-  padding: 20px;
-  height: 150px;
-  background-color: lightgrey;
-  text-align: center;
-}

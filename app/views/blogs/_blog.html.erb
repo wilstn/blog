@@ -1,0 +1,10 @@
+<div class="post-preview">
+  <h2 class="post-title">
+    <%= link_to blog.title, blog_path(blog) %>
+  </h2>
+  <p class="post-subtitle">
+    <%= truncate(blog.post, length: 100) %>
+  </p>
+  <p class="post-meta">Posted by <%= blog.author %> <%= time_ago_in_words(blog.created_at) %> ago</p>
+</div>
+<hr>

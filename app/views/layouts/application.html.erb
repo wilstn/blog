@@ -3,22 +3,19 @@
   <head>
     <title>Blog Project</title>
     <%= csrf_meta_tags %>
-
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag :defaults, "rails.validations" %>
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
   </head>
 
   <body>
-    <nav class="navbar navbar-default">
-      <%= button_to "Add Post", new_blog_path, :class => "btn btn-default pull-right", :method => :get %>
-    </nav>
-    <div class="main-body">
-      <%= yield %>
-    </div>
-    <footer>
-      &copy; A Student's blog
-    </footer>
+    <%= yield %>
+    <%= render 'shared/blog_footer' %>
   </body>
 </html>
