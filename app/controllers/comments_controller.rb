@@ -1,9 +1,10 @@
 class CommentsController < ApplicationController
   before_action :set_blog, only: [:new, :edit, :update, :create, :destroy]
   before_action :set_comment, only: [:edit, :update]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @comments = Blog.find(params[:id]).Comment.all
+    # @comments = Blog.find(params[:id]).comments.all
   end
 
   def show
@@ -26,6 +27,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @blog.comments.new(comment_params)
+    @comment.user_id = current_user.id
 
     if @comment.save
       redirect_to blog_path(@blog)
@@ -43,7 +45,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:remark, :email, :user)
+    params.require(:comment).permit(:remark)
   end
 
   def set_comment

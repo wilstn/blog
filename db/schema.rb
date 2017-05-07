@@ -10,12 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170507085654) do
+ActiveRecord::Schema.define(version: 20170507091729) do
 
   create_table "blogs", force: :cascade do |t|
     t.string   "title"
     t.string   "category"
-    t.string   "author"
     t.text     "post"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -27,8 +26,6 @@ ActiveRecord::Schema.define(version: 20170507085654) do
     t.datetime "updated_at", null: false
     t.text     "remark"
     t.integer  "blog_id"
-    t.string   "email"
-    t.string   "user"
     t.integer  "user_id"
   end
 

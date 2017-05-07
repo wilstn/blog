@@ -18,7 +18,7 @@ class BlogsController < ApplicationController
   end
 
   def create
-    @blog = Blog.new(blog_params)
+    @blog = current_user.blogs.new(blog_params)
 
     if @blog.save
       redirect_to blogs_path
@@ -43,7 +43,7 @@ class BlogsController < ApplicationController
   private
 
   def blog_params
-    params.require(:blog).permit(:title, :category, :author, :post)
+    params.require(:blog).permit(:title, :category, :post)
   end
 
   def set_blog
