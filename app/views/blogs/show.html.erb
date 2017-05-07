@@ -6,8 +6,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
               <%= simple_format(@blog.post) %>
-              <%= link_to 'Edit', edit_blog_path(@blog) %> /
-              <%= link_to 'Destroy', blog_path(@blog), method: :delete, data: {confirm: 'Are you sure?'} %> /
+              <%= edit_blog_helper %>
               <%= link_to 'Add Comment', new_blog_comment_path(@blog) %>
               <br>
               <h3><%= pluralize(@comments.count, 'Comment') %></h3>

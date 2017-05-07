@@ -13,10 +13,7 @@
                 </div>
                 <div class="panel-body">
                     <%= comment.remark %>
-                    <br>
-                    <hr>
-                    <%= link_to 'Edit', edit_blog_comment_path(blog, comment) %> /
-                    <%= link_to 'Delete', blog_comment_path(blog, comment), method: :delete %>
+                    <%= edit_comment_helper(comment) %>
                 </div>
             </div>
         </div>
